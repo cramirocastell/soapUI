@@ -1,0 +1,4 @@
+null,0.02,"EUR","Operation description text",404,SVC1005,User does not exist: user information (null)
+"tel:+34266999666",null,"EUR","Operation description text",400,SVC0001,Generic Client Error: Insufficient data to get an amount to charge.
+"tel:+34266999666",0.02,null,"Operation description text",404,SVC1020,Needed parameter was not found. currency
+"tel:+34266999666",0.02,"EUR",null,404,SVC1000,Missing mandatory parameter: Operation Description

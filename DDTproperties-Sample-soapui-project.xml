@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="QAINT" name="DDTproperties-Sample" resourceRoot="${projectDir}" soapui-version="4.6.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="Environments-Sample" type="rest" basePath="/payment/v2" definitionUrl="http://pe-qaint-be.hi.inet:8080/payment/v2?_wadl" id="3517ff93-56e2-4b63-80d2-a27f9a1d4256" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://pe-qaint-be.hi.inet:8080/payment/v2?_wadl"><con:part><con:url>http://pe-qaint-be.hi.inet:8080/payment/v2?_wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <grammars>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.telefonica.com/schemas/UNICA/REST/bablePayment/v2_1/" xmlns:ns1="http://www.telefonica.com/schemas/UNICA/REST/common/v2" xmlns:tns="http://www.telefonica.com/schemas/UNICA/REST/bablePayment/v2_1/">
+      <xs:import namespace="http://www.telefonica.com/schemas/UNICA/REST/common/v2"/>
+      <xs:element name="amountTransaction" type="tns:AmountTransactionType"/>
+      <xs:element name="paymentTransactionList" type="tns:PaymentTransactionListType"/>
+      <xs:element name="validationRequest" type="tns:ValidationRequestType"/>
+      <xs:complexType name="AmountTransactionType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="endUserId" type="xs:anyURI"/>
+          <xs:element form="qualified" minOccurs="0" name="paymentAmount" type="tns:PaymentAmountType"/>
+          <xs:element form="qualified" name="transactionOperationType" type="tns:TransactionOperationTypeType"/>
+          <xs:element form="qualified" minOccurs="0" name="transactionOperationStatus" type="tns:TransactionOperationStatusType"/>
+          <xs:element form="qualified" minOccurs="0" name="transactionOperationStatusDescription" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="statusDate" type="xs:dateTime"/>
+          <xs:element form="qualified" minOccurs="0" name="referenceCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="serverReferenceCode" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="originalServerReferenceCode" type="xs:string"/>
+          <xs:element default="false" form="qualified" minOccurs="0" name="refunded" type="xs:boolean"/>
+          <xs:element default="false" form="qualified" minOccurs="0" name="captured" type="xs:boolean"/>
+          <xs:element form="qualified" minOccurs="0" name="callbackUrl" type="xs:anyURI"/>
+          <xs:element form="qualified" minOccurs="0" name="resourceURL" type="xs:anyURI"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="link" nillable="true" type="xs:anyURI"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaymentAmountType">
+        <xs:sequence>
+          <xs:element form="qualified" name="chargingInformation" type="tns:ChargingInformationType"/>
+          <xs:element form="qualified" minOccurs="0" name="chargingMetaData" type="tns:ChargingMetaDataType"/>
+          <xs:element form="qualified" minOccurs="0" name="totalAmountCharged" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="totalAmountRefunded" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="totalAmountCredited" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="totalTaxAmount" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="amountReserved" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChargingInformationType">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" name="description" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="amount" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="taxAmount" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="totalAmount" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="currency" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="code" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChargingMetaDataType">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="channel" type="xs:string"/>
+          <xs:element form="qualified" name="serviceId" type="xs:string"/>
+          <xs:element form="qualified" name="applicationId" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="productId" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="productClass" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="merchantId" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="operationNature" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="clientDate" type="xs:dateTime"/>
+          <xs:element form="qualified" minOccurs="0" name="paymentMethod" type="tns:PaymentMethodType"/>
+          <xs:element form="qualified" minOccurs="0" name="additionalChargingMetaData" type="ns1:ExtensionType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaymentMethodType">
+        <xs:sequence>
+          <xs:element form="qualified" name="type" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="maskedAccountNumber" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="cvv" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaymentTransactionListType">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="amountTransaction" nillable="true" type="tns:AmountTransactionType"/>
+          <xs:element form="qualified" minOccurs="0" name="resourceURL" type="xs:anyURI"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="link" nillable="true" type="xs:anyURI"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ValidationRequestType">
+        <xs:sequence>
+          <xs:element form="qualified" name="validationData" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TransactionOperationTypeType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Charge"/>
+          <xs:enumeration value="Capture"/>
+          <xs:enumeration value="Refund"/>
+          <xs:enumeration value="Reserve"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TransactionOperationStatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Processing"/>
+          <xs:enumeration value="AuthorizationInProgress"/>
+          <xs:enumeration value="Authorized"/>
+          <xs:enumeration value="Charged"/>
+          <xs:enumeration value="Refunded"/>
+          <xs:enumeration value="Credited"/>
+          <xs:enumeration value="Reserved"/>
+          <xs:enumeration value="Released"/>
+          <xs:enumeration value="Denied"/>
+          <xs:enumeration value="Refused"/>
+          <xs:enumeration value="Unauthorized"/>
+          <xs:enumeration value="Terminated"/>
+          <xs:enumeration value="CompensationInProgress"/>
+          <xs:enumeration value="Compensated"/>
+          <xs:enumeration value="ErrorRetry"/>
+          <xs:enumeration value="Uncertain"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.telefonica.com/schemas/UNICA/REST/bablePayment/extensions/v2_1/" xmlns:ns1="http://www.telefonica.com/schemas/UNICA/REST/common/v2" xmlns:tns="http://www.telefonica.com/schemas/UNICA/REST/bablePayment/extensions/v2_1/">
+      <xs:import namespace="http://www.telefonica.com/schemas/UNICA/REST/common/v2"/>
+      <xs:element name="gretaAdditionalChargingMetaData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="qualified" minOccurs="0" name="operatorId" type="xs:string"/>
+            <xs:element form="qualified" minOccurs="0" name="countryId" type="xs:string"/>
+            <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="additionalData" type="ns1:NameValuePairType"/>
+            <xs:element form="qualified" minOccurs="0" name="operationDescription" type="xs:string"/>
+            <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="taxApplied" type="tns:AmountVariationType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="AmountVariationType">
+        <xs:sequence>
+          <xs:element form="qualified" name="description" type="xs:string"/>
+          <xs:element form="qualified" name="amount" type="xs:decimal"/>
+          <xs:element form="qualified" minOccurs="0" name="percentage" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.telefonica.com/schemas/UNICA/REST/common/v2" xmlns:tns="http://www.telefonica.com/schemas/UNICA/REST/common/v2">
+      <xs:element name="exception" type="tns:ExceptionType"/>
+      <xs:complexType name="ExtensionType">
+        <xs:sequence>
+          <xs:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+        </xs:sequence>
+        <xs:anyAttribute namespace="##other" processContents="skip"/>
+      </xs:complexType>
+      <xs:complexType name="AddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="street" type="xs:string"/>
+          <xs:element minOccurs="0" name="streetNumber" type="xs:unsignedInt"/>
+          <xs:element minOccurs="0" name="locality" type="xs:string"/>
+          <xs:element minOccurs="0" name="region" type="xs:string"/>
+          <xs:element minOccurs="0" name="postalCode" type="xs:unsignedInt"/>
+          <xs:element minOccurs="0" name="country" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ExceptionType">
+        <xs:sequence>
+          <xs:element name="exceptionId" type="xs:string"/>
+          <xs:element name="exceptionText" type="xs:string"/>
+          <xs:element minOccurs="0" name="moreInfo" type="xs:anyURI"/>
+          <xs:element minOccurs="0" name="userMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OtherIdType">
+        <xs:sequence>
+          <xs:element name="type" type="xs:string"/>
+          <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IpAddressType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ipv4" type="xs:string"/>
+          <xs:element minOccurs="0" name="ipv6" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SimpleReferenceType">
+        <xs:sequence>
+          <xs:element name="endpoint" type="xs:anyURI"/>
+          <xs:element name="interfaceName" type="xs:string"/>
+          <xs:element name="correlator" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NameValuePairType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TimeZoneType">
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="tzDatabase" type="xs:string"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+    </xs:schema>
+  </grammars>
+  <resources base="http://pe-qaint-be.hi.inet:8080/payment/v2">
+    <resource path="/">
+      <resource path="payments">
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <param name="serviceId" style="query" type="xs:string"/>
+            <param name="referenceCode" style="query" type="xs:string"/>
+            <param name="productId" style="query" type="xs:string"/>
+            <param name="endUserId" style="query" type="xs:string"/>
+            <param name="fromTime" style="query" type="xs:string"/>
+            <param name="untilTime" style="query" type="xs:string"/>
+            <param name="offset" style="query" type="xs:string"/>
+            <param name="limit" style="query" type="xs:string"/>
+            <param name="applicationId" style="query" type="xs:string"/>
+            <param name="intervalTime" style="query" type="xs:string"/>
+            <param name="transactionType" style="query" type="xs:string"/>
+            <param name="operationNature" style="query" type="xs:string"/>
+            <param name="originalTxId" style="query" type="xs:string"/>
+            <param name="gUserId" style="query" type="xs:string"/>
+            <param name="paymentMethodType" style="query" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/xml"/>
+          </response>
+        </method>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <param name="serviceId" style="query" type="xs:string"/>
+            <param name="referenceCode" style="query" type="xs:string"/>
+            <param name="productId" style="query" type="xs:string"/>
+            <param name="endUserId" style="query" type="xs:string"/>
+            <param name="fromTime" style="query" type="xs:string"/>
+            <param name="untilTime" style="query" type="xs:string"/>
+            <param name="offset" style="query" type="xs:string"/>
+            <param name="limit" style="query" type="xs:string"/>
+            <param name="applicationId" style="query" type="xs:string"/>
+            <param name="intervalTime" style="query" type="xs:string"/>
+            <param name="transactionType" style="query" type="xs:string"/>
+            <param name="operationNature" style="query" type="xs:string"/>
+            <param name="originalTxId" style="query" type="xs:string"/>
+            <param name="gUserId" style="query" type="xs:string"/>
+            <param name="paymentMethodType" style="query" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+        <method name="POST">
+          <request>
+            <param name="X-userInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="TransactionInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <representation mediaType="application/xml"/>
+          </request>
+          <response>
+            <representation mediaType="application/xml"/>
+          </response>
+        </method>
+        <method name="POST">
+          <request>
+            <param name="TransactionInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <representation mediaType="application/json"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="payments/{TxId}">
+        <param name="TxId" style="template" type="xs:string"/>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/xml"/>
+          </response>
+        </method>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="payments/{transactionId}/validate">
+        <param name="transactionId" style="template" type="xs:string"/>
+        <method name="POST">
+          <request>
+            <representation mediaType="application/json">
+              <param name="request" style="plain" type="xs:string"/>
+            </representation>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+        <method name="POST">
+          <request>
+            <representation mediaType="application/xml"/>
+          </request>
+          <response>
+            <representation mediaType="application/xml"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="refunds">
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <param name="serviceId" style="query" type="xs:string"/>
+            <param name="referenceCode" style="query" type="xs:string"/>
+            <param name="productId" style="query" type="xs:string"/>
+            <param name="endUserId" style="query" type="xs:string"/>
+            <param name="fromTime" style="query" type="xs:string"/>
+            <param name="untilTime" style="query" type="xs:string"/>
+            <param name="offset" style="query" type="xs:string"/>
+            <param name="limit" style="query" type="xs:string"/>
+            <param name="applicationId" style="query" type="xs:string"/>
+            <param name="intervalTime" style="query" type="xs:string"/>
+            <param name="transactionType" style="query" type="xs:string"/>
+            <param name="operationNature" style="query" type="xs:string"/>
+            <param name="originalTxId" style="query" type="xs:string"/>
+            <param name="gUserId" style="query" type="xs:string"/>
+            <param name="paymentMethodType" style="query" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+        <method name="POST">
+          <request>
+            <param name="TransactionInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <representation mediaType="application/json"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="refunds/{TxId}">
+        <param name="TxId" style="template" type="xs:string"/>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="reservedpayments">
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <param name="serviceId" style="query" type="xs:string"/>
+            <param name="referenceCode" style="query" type="xs:string"/>
+            <param name="productId" style="query" type="xs:string"/>
+            <param name="endUserId" style="query" type="xs:string"/>
+            <param name="fromTime" style="query" type="xs:string"/>
+            <param name="untilTime" style="query" type="xs:string"/>
+            <param name="offset" style="query" type="xs:string"/>
+            <param name="limit" style="query" type="xs:string"/>
+            <param name="applicationId" style="query" type="xs:string"/>
+            <param name="intervalTime" style="query" type="xs:string"/>
+            <param name="transactionType" style="query" type="xs:string"/>
+            <param name="operationNature" style="query" type="xs:string"/>
+            <param name="originalTxId" style="query" type="xs:string"/>
+            <param name="gUserId" style="query" type="xs:string"/>
+            <param name="paymentMethodType" style="query" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+        <method name="POST">
+          <request>
+            <param name="TransactionInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <representation mediaType="application/json"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="reservedpayments/{TxId}">
+        <param name="TxId" style="template" type="xs:string"/>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="reservedpayments/{origTxId}/captures">
+        <param name="origTxId" style="template" type="xs:string"/>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="reservedpayments/{origTxId}/captures/{TxId}">
+        <param name="origTxId" style="template" type="xs:string"/>
+        <param name="TxId" style="template" type="xs:string"/>
+        <method name="GET">
+          <request>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="reservedpayments/{originalTxId}/captures">
+        <param name="originalTxId" style="template" type="xs:string"/>
+        <method name="POST">
+          <request>
+            <param name="TransactionInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <representation mediaType="application/json"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="reservedpayments/{originalTxId}/release">
+        <param name="originalTxId" style="template" type="xs:string"/>
+        <method name="POST">
+          <request>
+            <param name="TransactionInfo" style="header" repeating="true" type="xs:string"/>
+            <param name="DBE-Custom-Params" style="header" repeating="true" type="xs:string"/>
+            <representation mediaType="application/json"/>
+          </request>
+          <response>
+            <representation mediaType="application/json"/>
+          </response>
+        </method>
+      </resource>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#serviceEndPoint}</con:endpoint></con:endpoints><con:resource name="/" path="/" id="fc93f861-1c11-4f77-b2af-50c80cd7588b"><con:settings/><con:parameters/><con:resource name="payments" path="payments" id="b31fe5c1-ec7c-44b2-96c1-035fcb129d65"><con:settings/><con:parameters/><con:method name="GET" method="GET" id="edbc87f6-00e2-4c4f-b35f-297efbdf5d55"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>serviceId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>referenceCode</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>productId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>endUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>fromTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>untilTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>offset</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>limit</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>applicationId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>intervalTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>transactionType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>operationNature</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>originalTxId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>gUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>paymentMethodType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="1ba489e1-75f8-4e2e-a50e-80eb7c31bc2d"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="GET-1" method="GET" id="ec563470-16aa-4c97-b9fd-4065f8153420"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>serviceId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>referenceCode</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>productId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>endUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>fromTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>untilTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>offset</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>limit</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>applicationId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>intervalTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>transactionType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>operationNature</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>originalTxId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>gUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>paymentMethodType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="0ba4b1ea-f1fe-423f-92cd-80f5b06c8ad7"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="POST" method="POST" id="ea6e6c45-6525-4717-9927-0be3737b30cb"><con:settings/><con:parameters><con:parameter><con:name>X-userInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>TransactionInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/xml" id="0fd96272-2b66-4df4-8060-212d7e65bb9c"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="POST-1" method="POST" id="4ef831ec-573c-4dca-a0aa-63fad6e2771d"><con:settings/><con:parameters><con:parameter><con:name>TransactionInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="b2a43e8d-c7bd-4643-820f-ae900626f5ab"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="payments/{TxId}" path="payments/{TxId}" id="60542267-3630-4491-8b6c-c61754492927"><con:settings/><con:parameters><con:parameter><con:name>TxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET" id="1a23c6cb-d726-4e70-8ec8-532a0da6cbbb"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="b4829e99-41ae-412c-be87-dd5a42fc22ff"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="GET-1" method="GET" id="01a026c0-724e-48e8-bb1a-cfaaf9d37596"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="4654be7d-2c3d-42d5-96d9-f9d7cac83b77"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="payments/{transactionId}/validate" path="payments/{transactionId}/validate" id="b76c24ce-a8db-4131-a720-94f47d3e4377"><con:settings/><con:parameters><con:parameter><con:name>transactionId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="POST" method="POST" id="048feb1f-ecf7-4635-b7b6-8b6a36203ba1"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="36bd57ff-47d6-4943-bf1b-251ac5c0da42"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="POST-1" method="POST" id="e810d4c6-d821-4823-a0e2-49b938126762"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/xml" id="c440333a-6e3d-459d-a1a1-7488a8b6f4ef"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="refunds" path="refunds" id="9c9243ec-f00a-4ac7-8a19-2e5336a4a31e"><con:settings/><con:parameters/><con:method name="GET" method="GET" id="9a371bf8-d000-4c48-83cf-283d93e986f7"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>serviceId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>referenceCode</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>productId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>endUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>fromTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>untilTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>offset</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>limit</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>applicationId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>intervalTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>transactionType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>operationNature</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>originalTxId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>gUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>paymentMethodType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="c8ae73bd-a2f4-4788-ae86-77b4fe70b087"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="POST" method="POST" id="f531f062-74c8-4b6d-afa2-181f4d4ab629"><con:settings/><con:parameters><con:parameter><con:name>TransactionInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="f97336c6-2c2c-4a66-aa02-3c4531a6e0d2"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="refunds/{TxId}" path="refunds/{TxId}" id="ec3b59a3-940b-4dda-9536-47e3984bd0a9"><con:settings/><con:parameters><con:parameter><con:name>TxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET" id="8bf8748f-438b-416f-b209-4c715028030a"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="7978551c-9041-4906-ab5a-5fec7a628149"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="reservedpayments" path="reservedpayments" id="33f45024-eafb-4199-b98d-401d5796220e"><con:settings/><con:parameters/><con:method name="GET" method="GET" id="d07c9b5e-023a-4208-8dee-3cb4d996f05d"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>serviceId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>referenceCode</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>productId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>endUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>fromTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>untilTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>offset</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>limit</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>applicationId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>intervalTime</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>transactionType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>operationNature</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>originalTxId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>gUserId</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>paymentMethodType</con:name><con:value xsi:nil="true"/><con:style>QUERY</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="c8bceab2-8b37-470d-a2db-7d71bc11059a"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method><con:method name="POST" method="POST" id="767dc6c4-3068-4603-adab-08f07e514321"><con:settings/><con:parameters><con:parameter><con:name>TransactionInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="cb2d48f0-cc2a-4812-9969-a5d200c80901"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="reservedpayments/{TxId}" path="reservedpayments/{TxId}" id="cf6a7a3d-a21b-49fe-a37e-78e92d431b29"><con:settings/><con:parameters><con:parameter><con:name>TxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET" id="9ee76127-5b7c-4bae-b2ac-51d24a12b88f"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="13c1b1dc-f8e7-427c-8d3a-8c2641858694"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="reservedpayments/{origTxId}/captures" path="reservedpayments/{origTxId}/captures" id="85fe5811-b852-4e9e-8c15-a57e6f780c88"><con:settings/><con:parameters><con:parameter><con:name>origTxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET" id="a82b35ed-3d1f-4cd4-a4b5-93c878d527e5"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="b731809e-d17c-4930-8841-ffebd1d3911b"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="reservedpayments/{origTxId}/captures/{TxId}" path="reservedpayments/{origTxId}/captures/{TxId}" id="064905f7-dd7e-4f48-b397-78ff9e71cd60"><con:settings/><con:parameters><con:parameter><con:name>origTxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>TxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET" id="1f747d65-b45f-4a80-be37-e2f9e4066b88"><con:settings/><con:parameters><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="f2708165-23c5-4298-a89b-a12a27dd8778"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="reservedpayments/{originalTxId}/captures" path="reservedpayments/{originalTxId}/captures" id="d13d613c-2974-4e63-a089-058d334b741f"><con:settings/><con:parameters><con:parameter><con:name>originalTxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="POST" method="POST" id="eeb64476-ffce-434b-b907-66e9cfd8e7f8"><con:settings/><con:parameters><con:parameter><con:name>TransactionInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="d480c36c-afc1-41f6-934c-5d297fb22501"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource><con:resource name="reservedpayments/{originalTxId}/release" path="reservedpayments/{originalTxId}/release" id="c4b16df3-2459-41f4-bd62-800598238aee"><con:settings/><con:parameters><con:parameter><con:name>originalTxId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="POST" method="POST" id="486f67a0-5f80-4b2b-8ac1-1eed71bc9f1b"><con:settings/><con:parameters><con:parameter><con:name>TransactionInfo</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>DBE-Custom-Params</con:name><con:value xsi:nil="true"/><con:style>HEADER</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json" id="0e3ced95-2350-4fc2-b7b1-facb9bde1af9"><con:settings/><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request/><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:request></con:method></con:resource></con:resource></con:interface><con:testSuite name="Positive Request"><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Successful Payment" searchProperties="true" id="537329ee-5791-48ce-a6af-2a53669cad9b"><con:settings/><con:testStep type="transfer" name="Reset TS Properties" id="5b98e7c5-3b9a-4038-9900-a1a0610e2439"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>serviceId</con:name><con:sourceType>serviceId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>serviceId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>applicationId</con:name><con:sourceType>applicationId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>applicationId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>appProviderId</con:name><con:sourceType>appProviderId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>appProviderId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>endUserId</con:name><con:sourceType>endUserId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>endUserId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>operatorId</con:name><con:sourceType>operatorId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>operatorId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>paymentMethod</con:name><con:sourceType>paymentMethod</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>paymentMethod</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>merchantId</con:name><con:sourceType>merchantId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>merchantId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>callbackUrl</con:name><con:sourceType>callbackUrl</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>callbackUrl</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>redirectUrl</con:name><con:sourceType>redirectUrl</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>redirectUrl</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>productClass</con:name><con:sourceType>productClass</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>productClass</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>amount</con:name><con:sourceType>amount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>amount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>taxAmount</con:name><con:sourceType>taxAmount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>taxAmount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>totalAmount</con:name><con:sourceType>totalAmount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>totalAmount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>currency</con:name><con:sourceType>currency</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>currency</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>operationDescription</con:name><con:sourceType>operationDescription</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>operationDescription</con:targetType><con:targetStep>#TestSuite#</con:targetStep><con:targetPath/></con:transfers></con:config></con:testStep><con:testStep type="datasource" name="DataSource-Amounts" id="84c7c273-54c5-4b0d-976f-560099895376"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>success-payment.csv</fileName><separator>,</separator><trim>true</trim><charset>Cp1252</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:property>amount</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="transfer" name="Get Next DataSet" id="7d12b9e0-1bb3-477c-b781-df767a970722"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" ignoreEmpty="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>amount</con:name><con:sourceType>amount</con:sourceType><con:sourceStep>DataSource-Amounts</con:sourceStep><con:targetType>amount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="POST Payment" id="e77dfff7-5c6f-4671-a20a-27a7c8a05c3f"><con:settings/><con:config service="Environments-Sample" resourcePath="/payment/v2/payments" methodName="POST-1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST Payment" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request>{
+		"userInfo": {
+			"endUserId": ${#TestSuite#endUserId},
+			"operatorId": ${#TestSuite#operatorId}
+		},
+		"vendorInfo": {
+		    "merchantId": ${#TestSuite#merchantId},
+		    "callbackUrl": ${#TestSuite#callbackUrl},
+			"redirectUrl": ${#TestSuite#redirectUrl}
+		},
+		"productInfo": {
+		    "productClass": ${#TestSuite#productClass},
+			"amount": ${#TestSuite#amount},
+			"taxAmount": ${#TestSuite#taxAmount},
+			"totalAmount": ${#TestSuite#totalAmount},
+			"currency": ${#TestSuite#currency}
+		},
+		"operationInfo": {
+		    "operationDescription": ${#TestSuite#operationDescription}
+		}
+	}
+}</con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>201</codes></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="TransactionInfo" value="servid=&quot;${#Project#serviceId}&quot;  appid=&quot;${#Project#applicationId}&quot; appProviderId=&quot;${#Project#appProviderId}&quot;" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="04404188-ab86-4e78-87bf-5b2b3876d7ea"><con:settings/><con:config><dataSourceStep>DataSource-Amounts</dataSourceStep><targetStep>Get Next DataSet</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>446d8410-ae8f-4093-8d54-39814e9b31a0</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0a9ad2cc-2fb6-4ea5-926b-6f1843629780</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7fc70a21-96fd-4558-9a0b-52de71937d15</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>59a5142c-c2b0-42d5-a569-836d8fe23625</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>1eac2002-ab02-44ef-a3b2-38700245d62a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>5b98e7c5-3b9a-4038-9900-a1a0610e2439</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>84c7c273-54c5-4b0d-976f-560099895376</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7d12b9e0-1bb3-477c-b781-df767a970722</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>e77dfff7-5c6f-4671-a20a-27a7c8a05c3f</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>04404188-ab86-4e78-87bf-5b2b3876d7ea</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties><con:property><con:name>serviceId</con:name><con:value>9</con:value></con:property><con:property><con:name>applicationId</con:name><con:value>50080</con:value></con:property><con:property><con:name>appProviderId</con:name><con:value>40876</con:value></con:property><con:property><con:name>endUserId</con:name><con:value>"tel:+34266999777"</con:value></con:property><con:property><con:name>operatorId</con:name><con:value>null</con:value></con:property><con:property><con:name>paymentMethod</con:name><con:value>null</con:value></con:property><con:property><con:name>merchantId</con:name><con:value>null</con:value></con:property><con:property><con:name>callbackUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>redirectUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>productClass</con:name><con:value>null</con:value></con:property><con:property><con:name>amount</con:name><con:value>1.0</con:value></con:property><con:property><con:name>taxAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>totalAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>currency</con:name><con:value>"EUR"</con:value></con:property><con:property><con:name>operationDescription</con:name><con:value>"Text Description"</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:testSuite name="Negative Request"><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Mandatory BODY fields left" searchProperties="true" id="5efe56c8-2678-489c-a685-f76cfc21f237"><con:settings/><con:testStep type="transfer" name="Reset TS Properties" id="1eac2002-ab02-44ef-a3b2-38700245d62a"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>serviceId</con:name><con:sourceType>serviceId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>serviceId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>applicationId</con:name><con:sourceType>applicationId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>applicationId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>appProviderId</con:name><con:sourceType>appProviderId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>appProviderId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>endUserId</con:name><con:sourceType>endUserId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>endUserId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>operatorId</con:name><con:sourceType>operatorId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>operatorId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>paymentMethod</con:name><con:sourceType>paymentMethod</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>paymentMethod</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>merchantId</con:name><con:sourceType>merchantId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>merchantId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>callbackUrl</con:name><con:sourceType>callbackUrl</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>callbackUrl</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>redirectUrl</con:name><con:sourceType>redirectUrl</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>redirectUrl</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>productClass</con:name><con:sourceType>productClass</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>productClass</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>amount</con:name><con:sourceType>amount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>amount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>taxAmount</con:name><con:sourceType>taxAmount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>taxAmount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>totalAmount</con:name><con:sourceType>totalAmount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>totalAmount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>currency</con:name><con:sourceType>currency</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>currency</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>operationDescription</con:name><con:sourceType>operationDescription</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>operationDescription</con:targetType><con:targetStep>#TestSuite#</con:targetStep><con:targetPath/></con:transfers></con:config></con:testStep><con:testStep type="datasource" name="DataSource-Mandatory" id="446d8410-ae8f-4093-8d54-39814e9b31a0"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>mandatory-body.csv</fileName><separator>,</separator><trim>true</trim><charset>Cp1252</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:property>endUserId</con:property><con:property>amount</con:property><con:property>currency</con:property><con:property>operationDescription</con:property><con:property>_responseCode</con:property><con:property>_exceptionId</con:property><con:property>_exceptionText</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="transfer" name="Get Next DataSet" id="7fc70a21-96fd-4558-9a0b-52de71937d15"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>endUserId</con:name><con:sourceType>endUserId</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>endUserId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false"><con:name>amount</con:name><con:sourceType>amount</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>amount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>currency</con:name><con:sourceType>currency</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>currency</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>_responseCode</con:name><con:sourceType>_responseCode</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>_responseCode</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>_exceptionId</con:name><con:sourceType>_exceptionId</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>_exceptionId</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>_exceptionText</con:name><con:sourceType>_exceptionText</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>_exceptionText</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>operationDescription</con:name><con:sourceType>operationDescription</con:sourceType><con:sourceStep>DataSource-Mandatory</con:sourceStep><con:targetType>operationDescription</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="POST Payment" id="59a5142c-c2b0-42d5-a569-836d8fe23625"><con:settings/><con:config service="Environments-Sample" resourcePath="/payment/v2/payments" methodName="POST-1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST Payment" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request>{
+		"userInfo": {
+			"endUserId": ${#TestSuite#endUserId},
+			"operatorId": ${#TestSuite#operatorId}
+		},
+		"vendorInfo": {
+		    "merchantId": ${#TestSuite#merchantId},
+		    "callbackUrl": ${#TestSuite#callbackUrl},
+			"redirectUrl": ${#TestSuite#redirectUrl}
+		},
+		"productInfo": {
+		    "productClass": ${#TestSuite#productClass},
+			"amount": ${#TestSuite#amount},
+			"taxAmount": ${#TestSuite#taxAmount},
+			"totalAmount": ${#TestSuite#totalAmount},
+			"currency": ${#TestSuite#currency}
+		},
+		"operationInfo": {
+		    "operationDescription": ${#TestSuite#operationDescription}
+		}
+	}
+}</con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>404,400</codes></con:configuration></con:assertion><con:assertion type="XPath Match" name="exceptionId Match"><con:configuration><path>declare namespace ns1='http://pe-qaint-be.hi.inet/payment/v2/payments';
+//ns1:Fault[1]/ns1:value[1]/ns1:exceptionId[1]</path><content>${#TestCase#_exceptionId}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="exceptionText Match"><con:configuration><path>declare namespace ns1='http://pe-qaint-be.hi.inet/payment/v2/payments';
+//ns1:Fault[1]/ns1:value[1]/ns1:exceptionText[1]</path><content>${#TestCase#_exceptionText}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="TransactionInfo" value="servid=&quot;${#Project#serviceId}&quot;  appid=&quot;${#Project#applicationId}&quot; appProviderId=&quot;${#Project#appProviderId}&quot;" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="0a9ad2cc-2fb6-4ea5-926b-6f1843629780"><con:settings/><con:config><dataSourceStep>DataSource-Mandatory</dataSourceStep><targetStep>Get Next DataSet</targetStep></con:config></con:testStep><con:properties><con:property><con:name>_responseCode</con:name><con:value>404</con:value></con:property><con:property><con:name>_exceptionId</con:name><con:value>SVC1000</con:value></con:property><con:property><con:name>_exceptionText</con:name><con:value>Missing mandatory parameter: Operation Description</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>446d8410-ae8f-4093-8d54-39814e9b31a0</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0a9ad2cc-2fb6-4ea5-926b-6f1843629780</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7fc70a21-96fd-4558-9a0b-52de71937d15</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>59a5142c-c2b0-42d5-a569-836d8fe23625</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>1eac2002-ab02-44ef-a3b2-38700245d62a</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Wrong endUserId Values" searchProperties="true" id="5064d246-0c35-4350-9477-0fdbbe407064"><con:settings/><con:testStep type="transfer" name="Reset TS Properties" id="d65205e3-52fa-4706-9405-d007279eceaf"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>serviceId</con:name><con:sourceType>serviceId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>serviceId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>applicationId</con:name><con:sourceType>applicationId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>applicationId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>appProviderId</con:name><con:sourceType>appProviderId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>appProviderId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>endUserId</con:name><con:sourceType>endUserId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>endUserId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>operatorId</con:name><con:sourceType>operatorId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>operatorId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>paymentMethod</con:name><con:sourceType>paymentMethod</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>paymentMethod</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>merchantId</con:name><con:sourceType>merchantId</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>merchantId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>callbackUrl</con:name><con:sourceType>callbackUrl</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>callbackUrl</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>redirectUrl</con:name><con:sourceType>redirectUrl</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>redirectUrl</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>productClass</con:name><con:sourceType>productClass</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>productClass</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>amount</con:name><con:sourceType>amount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>amount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>taxAmount</con:name><con:sourceType>taxAmount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>taxAmount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>totalAmount</con:name><con:sourceType>totalAmount</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>totalAmount</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>currency</con:name><con:sourceType>currency</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>currency</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>operationDescription</con:name><con:sourceType>operationDescription</con:sourceType><con:sourceStep>#Project#</con:sourceStep><con:targetType>operationDescription</con:targetType><con:targetStep>#TestSuite#</con:targetStep><con:targetPath/></con:transfers></con:config></con:testStep><con:testStep type="datasource" name="Dataset-Mandatory" id="7db30290-a6d1-4ab4-8778-7283a204b31e"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="File"><con:configuration><fileName>wrong-endUserId-values.csv</fileName><separator>,</separator><trim>true</trim><charset>Cp1252</charset><quotedValues>false</quotedValues></con:configuration></con:dataSource><con:property>endUserId</con:property><con:property>_responseCode</con:property><con:property>_exceptionId</con:property><con:property>_exceptionText</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="transfer" name="Get Next DataSet" id="f47c463c-ad52-4646-9ca1-c934b77c66ac"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>endUserId</con:name><con:sourceType>endUserId</con:sourceType><con:sourceStep>Dataset-Mandatory</con:sourceStep><con:targetType>endUserId</con:targetType><con:targetStep>#TestSuite#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>_responseCode</con:name><con:sourceType>_responseCode</con:sourceType><con:sourceStep>Dataset-Mandatory</con:sourceStep><con:targetType>_responseCode</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>_exceptionId</con:name><con:sourceType>_exceptionId</con:sourceType><con:sourceStep>Dataset-Mandatory</con:sourceStep><con:targetType>_exceptionId</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>_exceptionText</con:name><con:sourceType>_exceptionText</con:sourceType><con:sourceStep>Dataset-Mandatory</con:sourceStep><con:targetType>_exceptionText</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="POST Payment" id="593bcb75-61ca-46ec-bddd-3905d73e59d2"><con:settings/><con:config service="Environments-Sample" resourcePath="/payment/v2/payments" methodName="POST-1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="POST Payment" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://pe-qaint-be.hi.inet:8080</con:endpoint><con:request>{
+		"userInfo": {
+			"endUserId": ${#TestSuite#endUserId},
+			"operatorId": ${#TestSuite#operatorId}
+		},
+		"vendorInfo": {
+		    "merchantId": ${#TestSuite#merchantId},
+		    "callbackUrl": ${#TestSuite#callbackUrl},
+			"redirectUrl": ${#TestSuite#redirectUrl}
+		},
+		"productInfo": {
+		    "productClass": ${#TestSuite#productClass},
+			"amount": ${#TestSuite#amount},
+			"taxAmount": ${#TestSuite#taxAmount},
+			"totalAmount": ${#TestSuite#totalAmount},
+			"currency": ${#TestSuite#currency}
+		},
+		"operationInfo": {
+		    "operationDescription": ${#TestSuite#operationDescription}
+		}
+	}
+}</con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>400,401</codes></con:configuration></con:assertion><con:assertion type="XPath Match" name="exceptionId Match"><con:configuration><path>declare namespace ns1='http://pe-qaint-be.hi.inet/payment/v2/payments';
+//ns1:Fault[1]/ns1:value[1]/ns1:exceptionId[1]</path><content>${#TestCase#_exceptionId}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains exceptionText"><con:configuration><token>${#TestCase#_exceptionText}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="TransactionInfo" value="servid=&quot;${#Project#serviceId}&quot;  appid=&quot;${#Project#applicationId}&quot; appProviderId=&quot;${#Project#appProviderId}&quot;" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="2337452a-588c-4c7f-ab51-d6501025479b"><con:settings/><con:config><dataSourceStep>Dataset-Mandatory</dataSourceStep><targetStep>Get Next DataSet</targetStep></con:config></con:testStep><con:properties><con:property><con:name>_responseCode</con:name><con:value>401</con:value></con:property><con:property><con:name>_exceptionId</con:name><con:value>SEC1000</con:value></con:property><con:property><con:name>_exceptionText</con:name><con:value>Invalid Consumer Id:</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>446d8410-ae8f-4093-8d54-39814e9b31a0</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>0a9ad2cc-2fb6-4ea5-926b-6f1843629780</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7fc70a21-96fd-4558-9a0b-52de71937d15</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>59a5142c-c2b0-42d5-a569-836d8fe23625</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d65205e3-52fa-4706-9405-d007279eceaf</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>2337452a-588c-4c7f-ab51-d6501025479b</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>593bcb75-61ca-46ec-bddd-3905d73e59d2</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>7db30290-a6d1-4ab4-8778-7283a204b31e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>f47c463c-ad52-4646-9ca1-c934b77c66ac</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties><con:property><con:name>serviceId</con:name><con:value>9</con:value></con:property><con:property><con:name>applicationId</con:name><con:value>50080</con:value></con:property><con:property><con:name>appProviderId</con:name><con:value>40876</con:value></con:property><con:property><con:name>endUserId</con:name><con:value>"+34266999666"</con:value></con:property><con:property><con:name>operatorId</con:name><con:value>null</con:value></con:property><con:property><con:name>paymentMethod</con:name><con:value>null</con:value></con:property><con:property><con:name>merchantId</con:name><con:value>null</con:value></con:property><con:property><con:name>callbackUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>redirectUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>productClass</con:name><con:value>null</con:value></con:property><con:property><con:name>amount</con:name><con:value>0.01</con:value></con:property><con:property><con:name>taxAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>totalAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>currency</con:name><con:value>"EUR"</con:value></con:property><con:property><con:name>operationDescription</con:name><con:value>"Text Description"</con:value></con:property><con:property><con:name>_responseCode</con:name><con:value>404</con:value></con:property><con:property><con:name>_exceptionId</con:name><con:value>SVC1005</con:value></con:property><con:property><con:name>_exceptionText</con:name><con:value>User does not exist: user information (null)</con:value></con:property></con:properties><con:reportParameters/></con:testSuite><con:requirements/><con:properties><con:property><con:name>serviceId</con:name><con:value/></con:property><con:property><con:name>applicationId</con:name><con:value/></con:property><con:property><con:name>appProviderId</con:name><con:value/></con:property><con:property><con:name>endUserId</con:name></con:property><con:property><con:name>operatorId</con:name></con:property><con:property><con:name>paymentMethod</con:name></con:property><con:property><con:name>merchantId</con:name></con:property><con:property><con:name>callbackUrl</con:name></con:property><con:property><con:name>redirectUrl</con:name></con:property><con:property><con:name>productClass</con:name></con:property><con:property><con:name>amount</con:name></con:property><con:property><con:name>taxAmount</con:name></con:property><con:property><con:name>totalAmount</con:name></con:property><con:property><con:name>currency</con:name></con:property><con:property><con:name>operationDescription</con:name></con:property></con:properties><con:wssContainer/><con:databaseConnectionContainer><con:databaseConnection><con:name>ddbb-connection</con:name><con:driver>oracle.jdbc.driver.OracleDriver</con:driver><con:connectionString>jdbc:oracle:thin:any/PASS_VALUE@127.0.0.1:1521:any</con:connectionString><con:password>any</con:password></con:databaseConnection></con:databaseConnectionContainer><con:reporting><con:reportTemplates/><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/><con:environment name="QAINT"><con:service type="REST" name="Environments-Sample"><con:endpoint domain="" incomingWss="" outgoingWss="" password="" username="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://pe-qaint-be.hi.inet:8080 </con:endpoint></con:service><con:property><con:name>serviceId</con:name><con:value>9</con:value></con:property><con:property><con:name>applicationId</con:name><con:value>50080</con:value></con:property><con:property><con:name>appProviderId</con:name><con:value>40876</con:value></con:property><con:property><con:name>endUserId</con:name><con:value>"tel:+34266999777"</con:value></con:property><con:property><con:name>operatorId</con:name><con:value>null</con:value></con:property><con:property><con:name>paymentMethod</con:name><con:value>null</con:value></con:property><con:property><con:name>merchantId</con:name><con:value>null</con:value></con:property><con:property><con:name>callbackUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>redirectUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>productClass</con:name><con:value>null</con:value></con:property><con:property><con:name>amount</con:name><con:value>0.01</con:value></con:property><con:property><con:name>taxAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>totalAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>currency</con:name><con:value>"EUR"</con:value></con:property><con:property><con:name>operationDescription</con:name><con:value>"Text Description"</con:value></con:property><con:databaseConnectionContainer><con:databaseConnection><con:name>ddbb-connection</con:name><con:driver>oracle.jdbc.driver.OracleDriver</con:driver><con:connectionString>jdbc:oracle:thin:pe_qaint/pe1234@//racpro-scan.hi.inet:1521/RACPRE</con:connectionString><con:password>any</con:password></con:databaseConnection></con:databaseConnectionContainer></con:environment><con:environment name="LOCALHOST"><con:service type="REST" name="Environments-Sample"><con:endpoint domain="" incomingWss="" outgoingWss="" password="" username="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://localhost:8080</con:endpoint></con:service><con:property><con:name>serviceId</con:name><con:value>9</con:value></con:property><con:property><con:name>applicationId</con:name><con:value>50080</con:value></con:property><con:property><con:name>appProviderId</con:name><con:value>40876</con:value></con:property><con:property><con:name>endUserId</con:name><con:value>null</con:value></con:property><con:property><con:name>operatorId</con:name><con:value>null</con:value></con:property><con:property><con:name>paymentMethod</con:name><con:value>null</con:value></con:property><con:property><con:name>merchantId</con:name><con:value>null</con:value></con:property><con:property><con:name>callbackUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>redirectUrl</con:name><con:value>null</con:value></con:property><con:property><con:name>productClass</con:name><con:value>null</con:value></con:property><con:property><con:name>amount</con:name><con:value>null</con:value></con:property><con:property><con:name>taxAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>totalAmount</con:name><con:value>null</con:value></con:property><con:property><con:name>currency</con:name><con:value>null</con:value></con:property><con:property><con:name>operationDescription</con:name><con:value>null</con:value></con:property><con:databaseConnectionContainer><con:databaseConnection><con:name>ddbb-connection</con:name><con:driver>oracle.jdbc.driver.OracleDriver</con:driver><con:connectionString>jdbc:oracle:thin:pe/pe@//localhost:1521/XE</con:connectionString><con:password>any</con:password></con:databaseConnection></con:databaseConnectionContainer></con:environment><con:environment name="WIREMOCK"><con:service type="REST" name="Environments-Sample"><con:endpoint domain="" incomingWss="" outgoingWss="" password="" username="" wssTimeToLive="" wssType="" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://localhost:9999</con:endpoint></con:service><con:property><con:name>serviceId</con:name><con:value/></con:property><con:property><con:name>applicationId</con:name><con:value/></con:property><con:property><con:name>appProviderId</con:name><con:value/></con:property><con:property><con:name>endUserId</con:name><con:value>"tel:+34266999777"</con:value></con:property><con:property><con:name>operatorId</con:name><con:value/></con:property><con:property><con:name>paymentMethod</con:name><con:value/></con:property><con:property><con:name>merchantId</con:name><con:value/></con:property><con:property><con:name>callbackUrl</con:name><con:value/></con:property><con:property><con:name>redirectUrl</con:name><con:value/></con:property><con:property><con:name>productClass</con:name><con:value/></con:property><con:property><con:name>amount</con:name><con:value/></con:property><con:property><con:name>taxAmount</con:name><con:value/></con:property><con:property><con:name>totalAmount</con:name><con:value/></con:property><con:property><con:name>currency</con:name><con:value/></con:property><con:property><con:name>operationDescription</con:name><con:value>"wrong-endUserId"</con:value></con:property><con:databaseConnectionContainer><con:databaseConnection><con:name>ddbb-connection</con:name><con:driver>oracle.jdbc.driver.OracleDriver</con:driver><con:connectionString>jdbc:oracle:thin:any/PASS_VALUE@127.0.0.1:1521:any</con:connectionString><con:password>any</con:password></con:databaseConnection></con:databaseConnectionContainer></con:environment></con:soapui-project>
