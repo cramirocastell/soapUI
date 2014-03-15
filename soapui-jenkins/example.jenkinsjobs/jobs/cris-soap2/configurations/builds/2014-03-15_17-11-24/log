@@ -1,0 +1,41 @@
+Lanzada por el proyecto padre  "[8mha:AAAAnB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYB/az8JP3kosxi3eL8xAIjfQAKoD+ExQAAAA==[0mcris-soap2" ejecución número [8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAwmoBn6WflJ+slFmcW6xfmJBUb6hoYA2/qUN8cAAAA=[0m11
+originally caused by:
+ Lanzada por el proyecto padre  "[8mha:AAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgZ+/az8JP3kosxi3eL8xAJ9AM4XFibEAAAA[0mcris-soap" ejecución número [8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZB/az8JP3kosxi3eL8xAJ9QwsAxjFOEMYAAAA=[0m18
+ originally caused by:
+  Lanzada por el usuario [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Ejecutando.en el espacio de trabajo C:\Users\cramiro\.jenkins\jobs\cris-soap2\workspace\default
+[default] $ cmd /c call C:\Users\cramiro\AppData\Local\Temp\hudson7789867827371030850.bat
+
+C:\Users\cramiro\.jenkins\jobs\cris-soap2\workspace\default>C:\"Program Files (x86)"\SmartBear\SoapUI-Pro-4.6.1\bin\testrunner.bat -sTestSuite2 -E test-pass -a -r -f C:\Software\reports -FTXT C:\Software\CurrencyConvertor-soapui-project.xml 
+SoapUI Pro 4.6.1 TestCase Runner
+17:11:24,732 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\ojdbc7.jar] to extensions classpath
+17:11:24,733 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc3.jar] to extensions classpath
+17:11:24,733 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc4.jar] to extensions classpath
+17:11:24,733 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\sqljdbc.jar] to extensions classpath
+17:11:24,988 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\cramiro\soapui-settings.xml]
+17:11:25,208 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\scripts]
+17:11:25,263 INFO  [DefaultSoapUICore] Adding listeners from [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\listeners\demo-listeners.xml]
+17:11:25,957 INFO  [WsdlProject] Loaded project from [file:/C:/Software/CurrencyConvertor-soapui-project.xml]
+17:11:26,199 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [CurrencyConvertor]
+17:11:26,203 INFO  [SoapUIProTestCaseRunner] Running TestSuite [TestSuite2], runType = SEQUENTIAL
+17:11:26,213 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [TestCase 1]
+17:11:26,219 INFO  [SoapUIProTestCaseRunner] running step [Copy of ConversionRate - My MockRequest]
+17:11:26,654 DEBUG [HttpClientSupport$SoapUIHttpClient] Attempt 1 to execute request
+17:11:26,656 DEBUG [SoapUIMultiThreadedHttpConnectionManager$SoapUIDefaultClientConnection] Sending request: POST /CurrencyConvertor.asmx HTTP/1.1
+17:11:27,266 DEBUG [SoapUIMultiThreadedHttpConnectionManager$SoapUIDefaultClientConnection] Receiving response: HTTP/1.1 200 OK
+17:11:27,273 DEBUG [HttpClientSupport$SoapUIHttpClient] Connection can be kept alive indefinitely
+17:11:27,396 INFO  [SoapUIProTestCaseRunner] Assertion [SOAP Response] has status VALID
+17:11:27,396 INFO  [SoapUIProTestCaseRunner] Assertion [Contains] has status VALID
+17:11:27,411 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 1170ms, status: FINISHED
+17:11:27,412 INFO  [SoapUIProTestCaseRunner] TestSuite [TestSuite2] finished with status [FINISHED] in 1205ms
+
+SoapUI 4.6.1 TestCaseRunner Summary
+-----------------------------
+Time Taken: 1212ms
+Total TestSuites: 1
+Total TestCases: 1 (0 failed)
+Total TestSteps: 1
+Total Request Assertions: 2
+Total Failed Assertions: 0
+Total Exported Results: 1
+Finished: SUCCESS

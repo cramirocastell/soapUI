@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causes>
+        <hudson.model.Cause_-UserIdCause/>
+      </causes>
+    </hudson.model.CauseAction>
+    <hudson.tasks.test.MatrixTestResult>
+      <descriptions class="concurrent-hash-map"/>
+      <failCount>0</failCount>
+      <skipCount>0</skipCount>
+      <totalCount>0</totalCount>
+      <children/>
+    </hudson.tasks.test.MatrixTestResult>
+  </actions>
+  <number>21</number>
+  <startTime>1394904894605</startTime>
+  <result>FAILURE</result>
+  <duration>3270</duration>
+  <charset>windows-1252</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>C:\Users\cramiro\.jenkins\jobs\cris-soap\workspace</workspace>
+  <hudsonVersion>1.554</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+  <axes/>
+</matrix-build>

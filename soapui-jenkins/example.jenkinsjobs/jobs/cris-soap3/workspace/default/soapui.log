@@ -1,0 +1,16 @@
+2014-03-15 17:11:34,718 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\ojdbc7.jar] to extensions classpath
+2014-03-15 17:11:34,720 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc3.jar] to extensions classpath
+2014-03-15 17:11:34,720 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc4.jar] to extensions classpath
+2014-03-15 17:11:34,720 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\sqljdbc.jar] to extensions classpath
+2014-03-15 17:11:34,968 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\cramiro\soapui-settings.xml]
+2014-03-15 17:11:35,173 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\scripts]
+2014-03-15 17:11:35,175 INFO  [DefaultSoapUICore] Adding listeners from [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\listeners\demo-listeners.xml]
+2014-03-15 17:11:35,871 INFO  [WsdlProject] Loaded project from [file:/C:/Software/CurrencyConvertor-soapui-project.xml]
+2014-03-15 17:11:36,141 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [CurrencyConvertor]
+2014-03-15 17:11:36,142 INFO  [SoapUIProTestCaseRunner] Running TestSuite [TestSuite3], runType = SEQUENTIAL
+2014-03-15 17:11:36,155 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [TestCase 1]
+2014-03-15 17:11:36,160 INFO  [SoapUIProTestCaseRunner] running step [ConversionRate - My MockRequest]
+2014-03-15 17:11:37,033 INFO  [SoapUIProTestCaseRunner] Assertion [SOAP Response] has status VALID
+2014-03-15 17:11:37,033 INFO  [SoapUIProTestCaseRunner] Assertion [Contains] has status VALID
+2014-03-15 17:11:37,042 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 867ms, status: FINISHED
+2014-03-15 17:11:37,042 INFO  [SoapUIProTestCaseRunner] TestSuite [TestSuite3] finished with status [FINISHED] in 895ms

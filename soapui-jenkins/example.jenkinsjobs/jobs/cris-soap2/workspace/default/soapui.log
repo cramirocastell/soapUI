@@ -1,0 +1,235 @@
+2014-03-15 17:12:24,633 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\ojdbc7.jar] to extensions classpath
+2014-03-15 17:12:24,633 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc3.jar] to extensions classpath
+2014-03-15 17:12:24,633 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc4.jar] to extensions classpath
+2014-03-15 17:12:24,633 INFO  [SoapUI] Adding [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\ext\sqljdbc.jar] to extensions classpath
+2014-03-15 17:12:24,866 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\cramiro\soapui-settings.xml]
+2014-03-15 17:12:25,066 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\scripts]
+2014-03-15 17:12:25,068 INFO  [DefaultSoapUICore] Adding listeners from [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\listeners\demo-listeners.xml]
+2014-03-15 17:12:25,705 INFO  [WsdlProject] Loaded project from [file:/C:/Software/CurrencyConvertor-soapui-project.xml]
+2014-03-15 17:12:26,021 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [CurrencyConvertor]
+2014-03-15 17:12:26,025 INFO  [SoapUIProTestCaseRunner] Running TestSuite [TestSuite2], runType = SEQUENTIAL
+2014-03-15 17:12:26,036 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [TestCase 1]
+2014-03-15 17:12:26,047 INFO  [SoapUIProTestCaseRunner] running step [Copy of ConversionRate - My MockRequest]
+2014-03-15 17:12:26,830 INFO  [SoapUIProTestCaseRunner] Assertion [SOAP Response] has status VALID
+2014-03-15 17:12:26,830 INFO  [SoapUIProTestCaseRunner] Assertion [Contains] has status FAILED
+2014-03-15 17:12:26,830 ERROR [SoapUIProTestCaseRunner] ASSERTION FAILED -> Missing token [0.0219] in Response
+2014-03-15 17:12:26,830 ERROR [SoapUIProTestCaseRunner] Copy of ConversionRate - My MockRequest failed, exporting to [C:\Software\reports\TestSuite2-TestCase_1-Copy_of_ConversionRate__My_MockRequest-0-FAILED.txt]
+2014-03-15 17:12:26,840 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 776ms, status: FAILED
+2014-03-15 17:12:26,840 INFO  [SoapUIProTestCaseRunner] TestSuite [TestSuite2] finished with status [FAILED] in 809ms
+2014-03-15 17:12:26,842 ERROR [SoapUIProTestCaseRunner] java.lang.Exception: Contains in [Copy of ConversionRate - My MockRequest] failed;
+[Missing token [0.0219] in Response]
+Status: FAILED
+Time Taken: 776
+Size: 375
+Timestamp: Sat Mar 15 17:12:26 CET 2014
+TestStep: Copy of ConversionRate - My MockRequest
+
+----------------- Messages ------------------------------
+[Contains] Missing token [0.0219] in Response
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://www.webservicex.net/CurrencyConvertor.asmx
+
+---------------- Request ---------------------------
+Request Headers: Host : www.webservicex.net
+Content-Length : 325
+Accept-Encoding : gzip,deflate
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Connection : Keep-Alive
+Content-Type : application/soap+xml;charset=UTF-8;action="http://www.webserviceX.NET/ConversionRate"
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>ALL</web:FromCurrency>
+         <web:ToCurrency>ALL</web:ToCurrency>
+      </web:ConversionRate>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-AspNet-Version : 4.0.30319
+Date : Sat, 15 Mar 2014 16:12:26 GMT
+#status# : HTTP/1.1 200 OK
+Content-Length : 375
+Content-Type : application/soap+xml; charset=utf-8
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/7.0
+Cache-Control : private, max-age=0
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ConversionRateResponse xmlns="http://www.webserviceX.NET/">
+         <ConversionRateResult>1</ConversionRateResult>
+      </ConversionRateResponse>
+   </soap:Body>
+</soap:Envelope>
+
+2014-03-15 17:12:26,842 ERROR [SoapUI] An error occurred [Contains in [Copy of ConversionRate - My MockRequest] failed;
+[Missing token [0.0219] in Response]
+Status: FAILED
+Time Taken: 776
+Size: 375
+Timestamp: Sat Mar 15 17:12:26 CET 2014
+TestStep: Copy of ConversionRate - My MockRequest
+
+----------------- Messages ------------------------------
+[Contains] Missing token [0.0219] in Response
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://www.webservicex.net/CurrencyConvertor.asmx
+
+---------------- Request ---------------------------
+Request Headers: Host : www.webservicex.net
+Content-Length : 325
+Accept-Encoding : gzip,deflate
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Connection : Keep-Alive
+Content-Type : application/soap+xml;charset=UTF-8;action="http://www.webserviceX.NET/ConversionRate"
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>ALL</web:FromCurrency>
+         <web:ToCurrency>ALL</web:ToCurrency>
+      </web:ConversionRate>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-AspNet-Version : 4.0.30319
+Date : Sat, 15 Mar 2014 16:12:26 GMT
+#status# : HTTP/1.1 200 OK
+Content-Length : 375
+Content-Type : application/soap+xml; charset=utf-8
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/7.0
+Cache-Control : private, max-age=0
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ConversionRateResponse xmlns="http://www.webserviceX.NET/">
+         <ConversionRateResult>1</ConversionRateResult>
+      </ConversionRateResponse>
+   </soap:Body>
+</soap:Envelope>
+], see error log for details
+2014-03-15 17:12:26,843 ERROR [errorlog] java.lang.Exception: Contains in [Copy of ConversionRate - My MockRequest] failed;
+[Missing token [0.0219] in Response]
+Status: FAILED
+Time Taken: 776
+Size: 375
+Timestamp: Sat Mar 15 17:12:26 CET 2014
+TestStep: Copy of ConversionRate - My MockRequest
+
+----------------- Messages ------------------------------
+[Contains] Missing token [0.0219] in Response
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://www.webservicex.net/CurrencyConvertor.asmx
+
+---------------- Request ---------------------------
+Request Headers: Host : www.webservicex.net
+Content-Length : 325
+Accept-Encoding : gzip,deflate
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Connection : Keep-Alive
+Content-Type : application/soap+xml;charset=UTF-8;action="http://www.webserviceX.NET/ConversionRate"
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>ALL</web:FromCurrency>
+         <web:ToCurrency>ALL</web:ToCurrency>
+      </web:ConversionRate>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-AspNet-Version : 4.0.30319
+Date : Sat, 15 Mar 2014 16:12:26 GMT
+#status# : HTTP/1.1 200 OK
+Content-Length : 375
+Content-Type : application/soap+xml; charset=utf-8
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/7.0
+Cache-Control : private, max-age=0
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ConversionRateResponse xmlns="http://www.webserviceX.NET/">
+         <ConversionRateResult>1</ConversionRateResult>
+      </ConversionRateResponse>
+   </soap:Body>
+</soap:Envelope>
+
+java.lang.Exception: Contains in [Copy of ConversionRate - My MockRequest] failed;
+[Missing token [0.0219] in Response]
+Status: FAILED
+Time Taken: 776
+Size: 375
+Timestamp: Sat Mar 15 17:12:26 CET 2014
+TestStep: Copy of ConversionRate - My MockRequest
+
+----------------- Messages ------------------------------
+[Contains] Missing token [0.0219] in Response
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://www.webservicex.net/CurrencyConvertor.asmx
+
+---------------- Request ---------------------------
+Request Headers: Host : www.webservicex.net
+Content-Length : 325
+Accept-Encoding : gzip,deflate
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Connection : Keep-Alive
+Content-Type : application/soap+xml;charset=UTF-8;action="http://www.webserviceX.NET/ConversionRate"
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>ALL</web:FromCurrency>
+         <web:ToCurrency>ALL</web:ToCurrency>
+      </web:ConversionRate>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-AspNet-Version : 4.0.30319
+Date : Sat, 15 Mar 2014 16:12:26 GMT
+#status# : HTTP/1.1 200 OK
+Content-Length : 375
+Content-Type : application/soap+xml; charset=utf-8
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/7.0
+Cache-Control : private, max-age=0
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ConversionRateResponse xmlns="http://www.webserviceX.NET/">
+         <ConversionRateResult>1</ConversionRateResult>
+      </ConversionRateResponse>
+   </soap:Body>
+</soap:Envelope>
+
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.throwFailureException(SoapUITestCaseRunner.java:531)
+	at com.eviware.soapui.tools.SoapUITestCaseRunner.runRunner(SoapUITestCaseRunner.java:433)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.run(AbstractSoapUIRunner.java:158)
+	at com.eviware.soapui.tools.AbstractSoapUIRunner.runFromCommandLine(AbstractSoapUIRunner.java:89)
+	at com.eviware.soapui.SoapUIProTestCaseRunner.main(SourceFile:58)
