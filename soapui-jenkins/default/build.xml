@@ -1,0 +1,26 @@
+<project name="soapUI Nightly Build" default="testreport" basedir=".">
+
+<!--<property name="path">C:\"Program Files (x86)"\SmartBear\SoapUI-Pro-4.6.1\bin\</property>-->
+<property name="path">C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\</property>
+
+<target name="soapui">
+	<exec dir="." executable="C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\testrunner.bat">
+	<!-- -Dsuite=TestSuite1 -Denv=test-pass -->
+	<!--	<arg line=" -s${suite} -E ${env} -j -f d:\github\soapUI\soapui-jenkins\default\html d:\github\soapUI\soapui-jenkins\CurrencyConvertor-mock.jenkins.xml"/>-->
+		<arg line=" -s${suite} -E ${env} -j -f d:\github\soapUI\soapui-jenkins\default\html d:\github\soapUI\soapui-jenkins\CurrencyConvertor-mock.jenkins.xml"/>
+	</exec>
+</target>
+
+<target name="testreport" depends="soapui">
+	<junitreport todir="d:\github\soapUI\soapui-jenkins\default\html">
+		<fileset dir="d:\github\soapUI\soapui-jenkins\default\html">
+			<include name="TEST-*.xml"/>
+		</fileset>
+		<report todir="d:\github\soapUI\soapui-jenkins\default\reports"
+			styledir="c:\Software\apache-ant-1.9.3\etc"
+			format="noframes">
+		</report>
+	</junitreport>
+</target>
+
+</project>

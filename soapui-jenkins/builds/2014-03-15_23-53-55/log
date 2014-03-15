@@ -1,0 +1,45 @@
+Lanzada por el proyecto padre  "[8mha:AAAAnB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYB/az8JP3kosxi3eL8xAJjfQBLkSSdxQAAAA==[0mcris-soap3" ejecución número [8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAwmoBn6WflJ+slFmcW6xfmJBcb6hoYAvp0oj8cAAAA=[0m11
+originally caused by:
+ Lanzada por el proyecto padre  "[8mha:AAAAnB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYB/az8JP3kosxi3eL8xAIjfQAKoD+ExQAAAA==[0mcris-soap2" ejecución número [8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAwmoBn6WflJ+slFmcW6xfmJBUb6JuYAq6uAo8cAAAA=[0m47
+ originally caused by:
+  Lanzada por el proyecto padre  "[8mha:AAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgZ+/az8JP3kosxi3eL8xAJ9AM4XFibEAAAA[0mcris-soap" ejecución número [8mha:AAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZB/az8JP3kosxi3eL8xAJ9I2MAjbuxrMYAAAA=[0m23
+  originally caused by:
+   Lanzada por el usuario [8m[8mha:AAAApB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgYJ/az8JP3kosxi3eL8xAJj/ZTUtMTSnBJ9ABU2ecHNAAAA[0mdefault se ha ejecutado con el resultado SUCCESS
+Finished: SUCCESS
+default] $ cmd.exe /C '"C:\Software\apache-ant-1.9.3\bin\ant.bat -Denv=test-pass -Dsuite=TestSuite3 && exit %%ERRORLEVEL%%"'
+Buildfile: D:\github\soapUI\soapui-jenkins\default\build.xml
+
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQT6jNKU4P0+vJLE4u1gvPjGvRM8xryQksSg9tcQvvyTVvqNr/s+Vl9uYGBgqihikoKqT8/OK83NS9ZwhNEghAwQwghQWAADROOumXQAAAA==[0msoapui:
+     [exec] SoapUI Pro 4.6.1 TestCase Runner
+     [exec] 23:53:56,918 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\ojdbc7.jar] to extensions classpath
+     [exec] 23:53:56,919 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc3.jar] to extensions classpath
+     [exec] 23:53:56,919 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc4.jar] to extensions classpath
+     [exec] 23:53:56,919 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\sqljdbc.jar] to extensions classpath
+     [exec] 23:53:57,148 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\cramiro\soapui-settings.xml]
+     [exec] 23:53:57,347 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\scripts]
+     [exec] 23:53:57,348 INFO  [DefaultSoapUICore] Adding listeners from [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\listeners\demo-listeners.xml]
+     [exec] 23:53:57,977 INFO  [WsdlProject] Loaded project from [file:/d:/github/soapUI/soapui-jenkins/CurrencyConvertor-mock.jenkins.xml]
+     [exec] 23:53:58,217 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [CurrencyConvertor]
+     [exec] 23:53:58,218 INFO  [SoapUIProTestCaseRunner] Running TestSuite [TestSuite3], runType = SEQUENTIAL
+     [exec] 23:53:58,238 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [TestCase 1]
+     [exec] 23:53:58,244 INFO  [SoapUIProTestCaseRunner] running step [ConversionRate - My MockRequest]
+     [exec] 23:53:58,578 DEBUG [HttpClientSupport$SoapUIHttpClient] Attempt 1 to execute request
+     [exec] 23:53:58,578 DEBUG [SoapUIMultiThreadedHttpConnectionManager$SoapUIDefaultClientConnection] Sending request: POST /CurrencyConvertor.asmx HTTP/1.1
+     [exec] 23:53:58,906 DEBUG [SoapUIMultiThreadedHttpConnectionManager$SoapUIDefaultClientConnection] Receiving response: HTTP/1.1 200 OK
+     [exec] 23:53:58,913 DEBUG [HttpClientSupport$SoapUIHttpClient] Connection can be kept alive indefinitely
+     [exec] 23:53:58,984 INFO  [SoapUIProTestCaseRunner] Assertion [SOAP Response] has status VALID
+     [exec] 23:53:58,984 INFO  [SoapUIProTestCaseRunner] Assertion [Contains] has status VALID
+     [exec] 23:53:58,987 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 735ms, status: FINISHED
+     [exec] 23:53:58,987 INFO  [SoapUIProTestCaseRunner] TestSuite [TestSuite3] finished with status [FINISHED] in 765ms
+     [exec] 
+     [exec] 23:53:59,439 INFO  [SoapUIProTestCaseRunner] Created report at file:/d:/github/soapUI/soapui-jenkins/default/html/index.html
+
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQT6jNKU4P0+vJLE4u1gvPjGvRM8xryQksSg9tcQvvyTVvqNr/s+Vl9uYGBgqihikoKqT8/OK83NS9ZwhNEghAwQwghQWAADROOumXQAAAA==[0mtestreport:
+[junitreport] Processing d:\github\soapUI\soapui-jenkins\default\html\TESTS-TestSuites.xml to d:\github\soapUI\soapui-jenkins\default\reports\junit-noframes.html
+[junitreport] Loading stylesheet c:\Software\apache-ant-1.9.3\etc\junit-noframes.xsl
+[junitreport] Transform time: 265ms
+
+[8mha:AAAAYB+LCAAAAAAAAP9b85aBtbiIQSGjNKU4P0+vJLE4u1gvPjGvRM8xr8S/tCQ5PzfVL78ktUuDM0uMry+HiYGhoohBCqo8OT+vOD8nVc8ZQoMUMkAAI0hhAQAUXUdTXgAAAA==[0mBUILD SUCCESSFUL
+Total time: 3 seconds
+Grabando resultados de tests
+Finished: SUCCESS

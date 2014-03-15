@@ -1,0 +1,50 @@
+Status: FAILED
+Time Taken: 745
+Size: 375
+Timestamp: Sat Mar 15 23:51:56 CET 2014
+TestStep: Copy of ConversionRate - My MockRequest
+
+----------------- Messages ------------------------------
+[Contains] Missing token [0.0219] in Response
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://www.webservicex.net/CurrencyConvertor.asmx
+
+---------------- Request ---------------------------
+Request Headers: Host : www.webservicex.net
+Content-Length : 325
+Accept-Encoding : gzip,deflate
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Connection : Keep-Alive
+Content-Type : application/soap+xml;charset=UTF-8;action="http://www.webserviceX.NET/ConversionRate"
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>ALL</web:FromCurrency>
+         <web:ToCurrency>ALL</web:ToCurrency>
+      </web:ConversionRate>
+   </soap:Body>
+</soap:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-AspNet-Version : 4.0.30319
+Date : Sat, 15 Mar 2014 22:51:58 GMT
+#status# : HTTP/1.1 200 OK
+Content-Length : 375
+Content-Type : application/soap+xml; charset=utf-8
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/7.0
+Cache-Control : private, max-age=0
+
+
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ConversionRateResponse xmlns="http://www.webserviceX.NET/">
+         <ConversionRateResult>1</ConversionRateResult>
+      </ConversionRateResponse>
+   </soap:Body>
+</soap:Envelope>

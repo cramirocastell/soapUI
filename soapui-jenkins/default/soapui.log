@@ -1,0 +1,17 @@
+2014-03-15 23:53:56,918 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\ojdbc7.jar] to extensions classpath
+2014-03-15 23:53:56,919 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc3.jar] to extensions classpath
+2014-03-15 23:53:56,919 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\postgresql-8.3-604.jdbc4.jar] to extensions classpath
+2014-03-15 23:53:56,919 INFO  [SoapUI] Adding [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\ext\sqljdbc.jar] to extensions classpath
+2014-03-15 23:53:57,148 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\cramiro\soapui-settings.xml]
+2014-03-15 23:53:57,347 INFO  [SoapUIProGroovyScriptEngineFactory] Setting Script Library to [C:\Program Files (x86)\SmartBear\SoapUI-Pro-4.6.1\bin\scripts]
+2014-03-15 23:53:57,348 INFO  [DefaultSoapUICore] Adding listeners from [C:\Software\SmartBear\SoapUI-Pro-4.6.1\bin\listeners\demo-listeners.xml]
+2014-03-15 23:53:57,977 INFO  [WsdlProject] Loaded project from [file:/d:/github/soapUI/soapui-jenkins/CurrencyConvertor-mock.jenkins.xml]
+2014-03-15 23:53:58,217 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [CurrencyConvertor]
+2014-03-15 23:53:58,218 INFO  [SoapUIProTestCaseRunner] Running TestSuite [TestSuite3], runType = SEQUENTIAL
+2014-03-15 23:53:58,238 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [TestCase 1]
+2014-03-15 23:53:58,244 INFO  [SoapUIProTestCaseRunner] running step [ConversionRate - My MockRequest]
+2014-03-15 23:53:58,984 INFO  [SoapUIProTestCaseRunner] Assertion [SOAP Response] has status VALID
+2014-03-15 23:53:58,984 INFO  [SoapUIProTestCaseRunner] Assertion [Contains] has status VALID
+2014-03-15 23:53:58,987 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [TestCase 1], time taken: 735ms, status: FINISHED
+2014-03-15 23:53:58,987 INFO  [SoapUIProTestCaseRunner] TestSuite [TestSuite3] finished with status [FINISHED] in 765ms
+2014-03-15 23:53:59,439 INFO  [SoapUIProTestCaseRunner] Created report at file:/d:/github/soapUI/soapui-jenkins/default/html/index.html

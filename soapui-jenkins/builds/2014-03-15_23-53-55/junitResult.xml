@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<result>
+  <suites>
+    <suite>
+      <file>D:\github\soapUI\soapui-jenkins\default\html\TEST-TestSuite3.xml</file>
+      <name>CurrencyConvertor.TestSuite3</name>
+      <duration>0.735</duration>
+      <cases>
+        <case>
+          <duration>0.735</duration>
+          <className>CurrencyConvertor.TestSuite3</className>
+          <testName>TestCase 1</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>0.735</duration>
+  <keepLongStdio>false</keepLongStdio>
+</result>
